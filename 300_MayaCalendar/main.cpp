@@ -28,7 +28,7 @@ int main()
 			"muluk","ok","chuen","eb","ben","ix","mem","cib","caban","eznab","canac","ahau"};
 
 	for(int i = 0; i < dateCount; i++) 
-  {
+  	{
 		cin >> dayStrInput >> monthInput >> yearInput;
 
 		//Remove . at end of day
@@ -37,17 +37,17 @@ int main()
 		int strLength = dayStrInput.length();
 
 		while(strCount < strLength) 
-    {
+    		{
 			char c = dayStrInput[strCount];
 			if(c == '.') 
-      {
+      			{
 				dayStrInput.erase(strCount, 1);
 				strLength--;
-		  }
-		  else 
-      {
+		  	}
+		 	else 
+      			{
 				strCount++;
-		  }
+			}
 		}
 
 		//convert the string to an int
@@ -65,9 +65,9 @@ int main()
 		transform(monthInput.begin(), monthInput.end(), monthInput.begin(), ::tolower);
 
 		for(corrMoNum=0; corrMoNum < 20; corrMoNum++)
-    {
+    		{
 			if(monthInput == haabMonths[corrMoNum]) 
-      {
+     			{
 				break;
 			}
 		}
@@ -89,8 +89,7 @@ int main()
 
 		int daysIntoCurrentPeriod = totDaysPassed%20;
 
-		string outputDayName = tzolkinDay[daysIntoCurrentPeriod];	//minus one because array starts at 0 but days
-																	//start at 1
+		string outputDayName = tzolkinDay[daysIntoCurrentPeriod];	//minus one because array starts at 0 but day starts at 1
 
 		cout << (outputDayNum+1) << " " << outputDayName << " " << tzolkinYear << endl;
 
